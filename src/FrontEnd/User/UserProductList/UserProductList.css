@@ -1,0 +1,75 @@
+#My_Products {
+  position: relative;
+  text-align: center;
+  background: white;
+  width: 70%;
+  border-radius: 10px;
+  margin: 2rem auto;
+  padding: 2rem auto;
+}
+.Individual_Products {
+  border: 1px solid black;
+  margin: 1rem auto;
+}
+.Product_Image {
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem auto;
+}
+.Product_Image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.Product_Description {
+  width: 80%;
+  text-transform: capitalize;
+  margin: 0rem auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+
+.Product_Btn_Section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+.Btns {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  background: #ff1c4a;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 40.725rem) {
+  #My_Products {
+    width: 90%;
+  }
+  .Individual_Products {
+    margin: 0.5rem auto;
+  }
+  .Product_Image {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+@media (max-width: 45rem) {
+  #My_Products > h1 {
+    font-size: 1.5rem;
+  }
+  .Product_Description h3,
+  .Product_Description h4,
+  .Product_Description p {
+    font-size: 1rem;
+  }
+}

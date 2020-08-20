@@ -1,0 +1,26 @@
+.Btn {
+  display: flex;
+  justify-content: center;
+}
+button {
+  font-weight: bolder;
+  font-size: 1rem;
+  margin: 0px auto;
+  margin-bottom: 0.3rem;
+  padding: 0.4rem 1rem;
+  background: #ff1c4a;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  background: orange;
+}
+button:focus {
+  outline: none;
+}
+button:disabled {
+  background: gray;
+  color: black;
+}

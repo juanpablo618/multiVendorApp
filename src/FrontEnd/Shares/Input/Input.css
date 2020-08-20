@@ -1,0 +1,44 @@
+.valid {
+  position: relative;
+  width: 100%;
+  margin: 0rem auto;
+  margin-bottom: 0.1rem;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.--invalid {
+  color: red;
+}
+.--invalid input,
+.--invalid textarea {
+  border-color: red;
+}
+label {
+  font-weight: bolder;
+}
+label,
+input,
+textarea {
+  font-size: 1.3rem;
+  display: block;
+  width: 90%;
+  margin: 0.5rem;
+}
+input {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+input:focus {
+  outline: none;
+}
+@media (max-width: 40.625rem) {
+  label,
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+}

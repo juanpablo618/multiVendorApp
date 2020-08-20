@@ -1,0 +1,47 @@
+#Model {
+  background: white;
+  position: fixed;
+  z-index: 200;
+  width: 40%;
+  margin: 0px auto;
+  top: 30%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+#Header {
+  width: 100%;
+  background: indigo;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+#Description {
+  padding: 0.5rem 1rem;
+}
+button {
+  font-weight: bolder;
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
+  background: #ff1c4a;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  background: orange;
+}
+button:focus {
+  outline: none;
+}
+#Btn_section {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 40.725rem) {
+  #Model {
+    width: 70%;
+  }
+}

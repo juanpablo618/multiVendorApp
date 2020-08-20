@@ -1,0 +1,41 @@
+#UpdateName {
+  position: relative;
+  width: 70%;
+  margin: 2rem auto;
+}
+.Update_Btn__Section {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  margin: 1rem auto;
+}
+
+.Update_User_Btn {
+  border-radius: 10px;
+  display: block;
+  width: auto;
+  margin: 0rem;
+}
+#Delete_Account {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0rem;
+}
+#Delete_Account > .Delete_Account_Button {
+  background: orange;
+}
+#Delete_Account > .Delete_Account_Button:hover {
+  background: red;
+}
+@media (max-width: 31.25rem) {
+  .Update_User_Btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 40.625rem) {
+  #UpdateName {
+    width: 90%;
+  }
+}

@@ -1,0 +1,16 @@
+#Add_Product {
+  position: relative;
+  margin: 1rem auto;
+  width: 70%;
+  box-sizing: border-box;
+}
+@media (max-width: 40.625rem) {
+  #Add_Product {
+    width: 90%;
+  }
+}
+@media (min-width: 55.375rem) {
+  #Add_Product {
+    width: 60%;
+  }
+}

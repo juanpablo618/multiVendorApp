@@ -1,0 +1,6 @@
+.Card {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border-radius: 0.5rem;
+}

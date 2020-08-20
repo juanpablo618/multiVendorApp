@@ -1,0 +1,17 @@
+#Auth {
+  width: 60%;
+  position: relative;
+  margin: 3.5rem auto;
+}
+#Btn_Section {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 40.625rem) {
+  #Auth {
+    width: 90%;
+  }
+  #Login_Signup_H1 {
+    font-size: 1.7rem;
+  }
+}

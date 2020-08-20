@@ -1,0 +1,20 @@
+#Add_Category {
+  position: relative;
+  width: 70%;
+  margin: 3rem auto;
+}
+.Add_Category__Btn___Section {
+  margin: 0.5rem 0rem;
+}
+
+@media (max-width: 40.625rem) {
+  #Add_Category {
+    width: 90%;
+  }
+  .Add_Category__Btn___Section {
+    margin: 0.2rem 0rem;
+  }
+  .Add_Category__Btn___Section > button {
+    font-size: 0.8rem;
+  }
+}

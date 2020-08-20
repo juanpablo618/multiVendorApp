@@ -1,0 +1,35 @@
+#Product {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+  background: black;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+#Product:hover {
+  background: white;
+  color: black;
+}
+#Image_Section {
+  width: 70%;
+  margin: auto;
+}
+#Image_Section img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#Btn_Section {
+  width: 100%;
+}
+.Btns {
+  font-size: 1rem;
+  display: block;
+  width: 80%;
+  margin: 0.3rem auto;
+}
