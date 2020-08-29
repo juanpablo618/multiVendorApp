@@ -35,13 +35,13 @@ function CategoryItem(props) {
   if (state.length === 0) {
     return (
       <h1 style={{ color: "white", textAlign: "center" }}>
-        Not Found Any Category :(
+        No encontramos ninguna categoría :(
       </h1>
     );
   }
   return (
     <div id="Categories">
-      <h1 id="Categories_Heading">Our Categories</h1>
+      <h1 id="Categories_Heading">Nuestras Categorías</h1>
 
       <Card>
         {state.map(Category => (
@@ -49,14 +49,14 @@ function CategoryItem(props) {
             <h3 className="Indeivdual_Category_Heading">{Category.name}</h3>
             <div className="Btn">
               <Link to={`/updateCategory/${Category._id}`} className="Btns">
-                Update
+                Actualizar
               </Link>
               <Link
                 to="#"
                 className="Btns"
                 onClick={() => DeleteCategory(Category._id)}
               >
-                Delete
+                Borrar
               </Link>
             </div>
           </div>

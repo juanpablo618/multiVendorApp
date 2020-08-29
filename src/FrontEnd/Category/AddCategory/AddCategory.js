@@ -72,11 +72,11 @@ function AddCategory() {
         <Card>
           <Input
             element="input"
-            title="Category Name"
+            title="Nombre de la categoría"
             type="text"
             id="name"
-            errorMsg="provide First Category Name please"
-            placeholder="Enter Your Category Name"
+            errorMsg="ingrese nombre de la categoría por favor"
+            placeholder="Ingrese el nombre de la categoría"
             validators={[VALIDATOR_REQUIRE()]}
             onInput={inputHandler}
           />

@@ -8,6 +8,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border-radius: 5px;
+
 }
 .--invalid {
   color: red;
@@ -26,11 +28,13 @@ textarea {
   display: block;
   width: 90%;
   margin: 0.5rem;
+  border-radius: 5px;
+
 }
 input {
   font-size: 1rem;
-  border: 1px solid black;
-  border-radius: 2px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
 }
 input:focus {
   outline: none;

@@ -5,7 +5,7 @@
   margin: 1rem auto;
 }
 #product_Total_Section {
-  color: white;
+  color: #007BFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,12 +16,12 @@
   padding: 0.7rem 1rem;
 }
 .My_Cart_Products {
-  color: white;
+  color: #007BFF;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
+  border-bottom: 2px solid #007BFF;
+  border-top: 2px solid #007BFF;
   padding: 0.5rem 0rem;
 }
 .Cart_Product_Image_Section {
@@ -35,7 +35,7 @@
 }
 #My_Cart_Heading {
   text-align: center;
-  color: white;
+  color: #007BFF;
 }
 .Cart_Btn_Section {
   margin: 0rem 0.1rem;

@@ -27,4 +27,9 @@ Router.route("/Pay").post(
   UserController.Pay
 );
 
+Router.route("/PayJuan").post(
+  UserController.RestrictTo("user"),
+  UserController.PayJuan
+);
+
 module.exports = Router;

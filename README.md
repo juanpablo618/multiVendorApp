@@ -66,3 +66,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### install MongoDB
+https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows
+
+Create the following folder
+C:\data\ShoppingCart
+
+### Start mongodb
+go to C:\Program Files\MongoDB\Server\4.4\bin>
+then execute : mongod
+
+then in the proyect execute
+npm run db
+should say : Connected To Database :)
+
+after that npm start on other console
+

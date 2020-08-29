@@ -3,7 +3,13 @@ const Schema = Mongoose.Schema;
 const productSchema = Schema({
   name: {
     type: String,
-    required: [true, "Please Provide Name Of Product"],
+    required: [true, "Por favor proporciona un nombre para el producto"],
+    toLower: true,
+    trim: true
+  },
+  telefono: {
+    type: String,
+    required: [true, "Por favor porporciona un nro de tel para el producto"],
     toLower: true,
     trim: true
   },
@@ -13,10 +19,10 @@ const productSchema = Schema({
   },
   price: {
     type: Number,
-    required: [true, "Please Provide Price Of Product"],
+    required: [true, "Por favor proporciona un precio para el producto"],
     validate: function(Value) {
       if (Value <= 0)
-        throw new Error("Price Can Not Be Less Than Or Equal To Zero");
+        throw new Error("El precio no puede ser menor o igual a cero");
     }
   },
   image: {
@@ -26,12 +32,12 @@ const productSchema = Schema({
   category: {
     type: Mongoose.SchemaTypes.ObjectId,
     ref: "Category",
-    required: [true, "Product Must Have Category"]
+    required: [true, "El producto debe tener una categoría"]
   },
   vendor: {
     type: Mongoose.SchemaTypes.ObjectId,
     ref: "User",
-    required: [true, "Product Must Have Vendor"]
+    required: [true, "El producto debe tener vendedor"]
   }
 });
 

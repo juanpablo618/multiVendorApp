@@ -23,7 +23,7 @@ function UserItem(props) {
         </div>
         <div className="Information">
           <p>Items: {Vendor.myProduct}</p>
-          <p>Total: {Vendor.totalAmount}</p>
+          <p>Total vendido: {Vendor.totalAmount} $</p>
         </div>
       </div>
     ));

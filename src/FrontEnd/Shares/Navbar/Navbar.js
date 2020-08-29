@@ -26,13 +26,13 @@ function Navbar() {
             <span></span>
             <span></span>
           </div>
-          <div id="Logo">Multivendor System</div>
+          <div id="Logo">Shopping Ox</div>
         </div>
         <ul>
           {(!Auth.isLoggedIn || (Auth.isLoggedIn && Auth.role === "user")) && (
             <li>
               <Link to="/products" className="Links">
-                All Items
+                Todos los productos
               </Link>
             </li>
           )}
@@ -40,56 +40,56 @@ function Navbar() {
           {Auth.isLoggedIn && Auth.role === "admin" && (
             <li>
               <Link to="/" className="Links">
-                View Vendors
+                Ver Vendores
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "admin" && (
             <li>
               <Link to="/addCategory" className="Links">
-                Add Category
+                Agregar Categoría
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "admin" && (
             <li>
               <Link to="/viewCategory" className="Links">
-                Categories
+                Categorias
               </Link>
             </li>
           )}
           {!Auth.isLoggedIn && (
             <li>
               <Link to="/auth" className="Links">
-                Authenticate
+                Ingresar
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "vendor" && (
             <li>
               <Link to="/add" className="Links">
-                Add Item
+                Agregar Item
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "vendor" && (
             <li>
               <Link to="/viewProduct" className="Links">
-                View Item
+                Ver Productos
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "vendor" && (
             <li>
               <Link to="/mysell" className="Links">
-                View Sell
+                Ver Ventas
               </Link>
             </li>
           )}
           {Auth.isLoggedIn && Auth.role === "user" && (
             <li>
               <Link to="/cart" className="Links">
-                MyCart
+                Mi carrito
               </Link>
             </li>
           )}
@@ -97,7 +97,7 @@ function Navbar() {
           {Auth.isLoggedIn && (
             <li>
               <Link to="#" className="Links" onClick={Auth.logOut}>
-                Logout
+                Salir
               </Link>
             </li>
           )}

@@ -66,7 +66,7 @@ function MySell() {
           textAlign: "center"
         }}
       >
-        <h1 id="My_Cart_Heading">My Sell</h1>
+        <h1 id="My_Cart_Heading">Mis ventas</h1>
         {mySell.map(Product => (
           <div className="My_Cart_Products" key={Product.Id}>
             <div className="Cart_Product_Image_Section">

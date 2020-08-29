@@ -39,6 +39,10 @@ function AddProduct() {
         value: "",
         isValid: false
       },
+      telefono: {
+        value: "",
+        isValid: false
+      },
       category: {
         value: "",
         isValid: false
@@ -87,6 +91,7 @@ function AddProduct() {
       console.log(state.inputs.category.value.length);
       console.log(categories[0].value);
       formData.append("name", state.inputs.name.value);
+      formData.append("telefono", state.inputs.telefono.value);
       formData.append(
         "category",
         state.inputs.category.value.length === 0
@@ -121,44 +126,56 @@ function AddProduct() {
           <form onSubmit={AddItem}>
             <Input
               element="input"
-              title="Product Name"
+              title="Nombre del producto"
               type="text"
-              errorMsg="Please Provide Name Of Product"
+              errorMsg="Ingrese nombre del producto"
               id="name"
-              placeholder="Enter Name Of Product"
+              placeholder="Nombre del producto"
               validators={[VALIDATOR_REQUIRE()]}
               onInput={inputHandler}
             />
+
+            <Input
+              element="input"
+              title="Tel que quiere que lo contacten"
+              type="text"
+              errorMsg="Por favor ingrese teléfono que quiere que lo contacten"
+              id="telefono"
+              placeholder="Tel. que quiere que lo contacten"
+              validators={[VALIDATOR_REQUIRE()]}
+              onInput={inputHandler}
+            />
+
             <SelectBar
               onInput={inputHandler}
               id={"category"}
-              title="Category"
+              title="Categoría"
               Arr={categories}
             />
             <UploadImage onInput={inputHandler} id={"image"} />
             <Input
               element="textarea"
-              title="Product Description"
+              title="Descripción del producto"
               type="text"
-              errorMsg="Please Provide Description Of Product"
+              errorMsg="por favor ingrese una descripción del producto"
               id="description"
-              placeholder="Enter Description Of Product"
+              placeholder="ingrese descripción del producto"
               validators={[VALIDATOR_REQUIRE()]}
               onInput={inputHandler}
             />
             <Input
               element="input"
-              title="Product Price"
+              title="Precio del producto"
               type="number"
-              errorMsg="Please Provide Price Of Product"
+              errorMsg="Por favor ingrese precio del producto"
               id="price"
-              placeholder="Enter Price Of Product"
+              placeholder="Ingrese precio del producto"
               validators={[VALIDATOR_REQUIRE()]}
               onInput={inputHandler}
             />
             <div id="Btn_Section">
               <button type="submit" disabled={!state.isValid}>
-                ADD PRODUCT
+                AGREGAR PRODUCTO
               </button>
             </div>
           </form>

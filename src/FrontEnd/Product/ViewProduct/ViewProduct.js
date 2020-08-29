@@ -73,15 +73,22 @@ function ViewProduct() {
         <div className="Product_Description">
           <h3>{product.name}</h3>
           <h4>{product.description}</h4>
+          <h4>{product.telefono}</h4>
+          
           <h5>RS.{product.price}$</h5>
+          
         </div>
         <div id="Btn_Section">
           <Link to="#" className="Btns" onClick={() => BuyItem(Id)}>
-            Buy Now
+            Comprar ahora
           </Link>
           <Link to="/products" className="Btns">
-            Return
+            Regresar
           </Link>
+          <a  href={`https://api.whatsapp.com/send?phone=` + product.telefono + `&text=`+ product.description } className="Btns">
+            Pedir por WA
+          </a>
+          
         </div>
       </div>
     );

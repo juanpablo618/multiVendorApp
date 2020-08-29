@@ -6,23 +6,23 @@ const Schema = Mongoose.Schema;
 const userSchema = Schema({
   firstName: {
     type: String,
-    required: [true, "Please Provide Firstname"],
+    required: [true, "Por favor ingrese un nombre"],
     trim: true
   },
   lastName: {
     type: String,
-    required: [true, "Please Provide Lastname"],
+    required: [true, "Por favor ingrese un apellido"],
     trim: true
   },
   email: {
     type: String,
-    required: [true, "Please Provide Email"],
+    required: [true, "Por favor ingrese un email"],
     trim: true,
-    unique: [true, "This Email Already In Use"]
+    unique: [true, "Este email ya está en uso"]
   },
   password: {
     type: String,
-    required: [true, "Please Prove Your Password"]
+    required: [true, "Por favor ingrese un password"]
   },
   image: {
     type: String,
@@ -78,9 +78,9 @@ userSchema.methods.MatchPassword = async (Password, UserPassword) =>
   Bcrypt.compare(Password, UserPassword);
 
 userSchema.methods.GenerateToken = Id =>
-  Jwt.sign({ Id }, "ISLAM IS LOVE", { expiresIn: "1h" });
+  Jwt.sign({ Id }, "JPC", { expiresIn: "1h" });
 
-userSchema.statics.VerifyToken = Token => Jwt.verify(Token, "ISLAM IS LOVE");
+userSchema.statics.VerifyToken = Token => Jwt.verify(Token, "JPC");
 
 // Hooks
 userSchema.pre("save", async function(next) {

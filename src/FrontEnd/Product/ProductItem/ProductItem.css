@@ -12,18 +12,19 @@
   margin: 0.5rem;
   padding: 1rem;
   border-radius: 10px;
-  background: rgb(241, 218, 218);
+  background: white;
   color: black;
 }
 .Product_Image_Section > img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .Products:hover {
-  background: rgb(15, 15, 15);
-  border: 1px solid white;
+  background: rgb(229, 226, 226);
+  border: 1px solid blue;
   cursor: pointer;
-  color: white;
+  color: black;
 }
 .Product_Image_Section {
   margin: 0px auto;

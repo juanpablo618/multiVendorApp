@@ -38,6 +38,10 @@ function UpdateProduct() {
         value: "",
         isValid: false
       },
+      telefono: {
+        value: "",
+        isValid: false
+      },
       description: {
         value: "",
         isValid: false
@@ -59,6 +63,7 @@ function UpdateProduct() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", state.inputs.name.value);
+    formData.append("telefono", state.inputs.telefono.value);
     formData.append("price", state.inputs.price.value);
     formData.append("description", state.inputs.description.value);
     formData.append("image", state.inputs.image.value);
@@ -90,6 +95,10 @@ function UpdateProduct() {
           {
             name: {
               value: Data.Product.name,
+              isValid: true
+            },
+            telefono: {
+              value: Data.Product.telefono,
               isValid: true
             },
             description: {
@@ -131,7 +140,19 @@ function UpdateProduct() {
             element="input"
             value={productToBeUpdate.name}
             isValid={true}
-            title="Category Name"
+            title="Nombre del producto"
+            type="text"
+            id="name"
+            errorMsg="provide First Product Name please"
+            placeholder="Enter Your Product Name"
+            validators={[VALIDATOR_REQUIRE()]}
+            onInput={inputHandler}
+          />
+          <Input
+            element="input"
+            value={productToBeUpdate.telefono}
+            isValid={true}
+            title="Teléfono del producto"
             type="text"
             id="name"
             errorMsg="provide First Product Name please"
@@ -170,7 +191,7 @@ function UpdateProduct() {
           />
           <div id="Btn_Section">
             <button type="submit" disabled={!state.isValid}>
-              UPDATE Product
+              Actualizar producto
             </button>
           </div>
         </Card>

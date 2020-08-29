@@ -11,63 +11,63 @@ function SideNavBar(props) {
       {(!Auth.isLoggedIn || (Auth.isLoggedIn && Auth.role === "user")) && (
         <li>
           <Link to="/products" className="Side_Links">
-            All Items
+            Todos los productos
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "admin" && (
         <li>
           <Link to="/" className="Side_Links">
-            View Vendors
+            Ver Vendedores
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "admin" && (
         <li>
           <Link to="/addCategory" className="Side_Links">
-            Add Category
+            Agregar Categoria
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "admin" && (
         <li>
           <Link to="/viewCategory" className="Side_Links">
-            Categories
+            Categorias
           </Link>
         </li>
       )}
       {!Auth.isLoggedIn && (
         <li>
           <Link to="/auth" className="Side_Links">
-            Authenticate
+          Ingresar
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "vendor" && (
         <li>
           <Link to="/add" className="Side_Links">
-            Add Item
+            Agregar Item
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "vendor" && (
         <li>
           <Link to="/viewProduct" className="Side_Links">
-            View Item
+            Ver Item
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "vendor" && (
         <li>
           <Link to="/mysell" className="Side_Links">
-            View Sell
+            Ver Ventas
           </Link>
         </li>
       )}
       {Auth.isLoggedIn && Auth.role === "user" && (
         <li>
           <Link to="/cart" className="Side_Links">
-            MyCart
+            Mi carrito
           </Link>
         </li>
       )}
@@ -75,7 +75,7 @@ function SideNavBar(props) {
       {Auth.isLoggedIn && (
         <li>
           <Link to="/auth" className="Side_Links" onClick={Auth.logOut}>
-            Logout
+            Salir
           </Link>
         </li>
       )}

@@ -45,6 +45,15 @@ function CartItem(props) {
       });
     } catch (error) {}
   };
+
+  const PayBillJuan = async () => {
+    try {
+      await makeRequest("http://localhost:5000/User/PayJuan", "POST", null, {
+        Authorization: "Bearer " + Auth.token
+      });
+    } catch (error) {}
+  };
+
   const RemoveFromCart = async Id => {
     try {
       //   Removing Item From Cart
@@ -90,7 +99,7 @@ function CartItem(props) {
           margin: "1rem"
         }}
       >
-        Nothing Added To Cart
+        Nada agregado a tu carrito
       </h1>
     );
   } else if (isLoading || isError) {
@@ -109,11 +118,12 @@ function CartItem(props) {
         <div id="product_Total_Section">
           <h1 id="Cart_Total">Total {myCart.totalAmount}</h1>
           <Link to="/products" onClick={PayBill} className="Btns payBill_Btn">
-            Pay Bill
+            Pagar
           </Link>
+          
         </div>
         <div>
-          <h1 id="My_Cart_Heading">My Cart</h1>
+          <h1 id="My_Cart_Heading">Mi Carrito</h1>
           {myCart.items.map(Product => (
             <div className="My_Cart_Products" key={Product._id}>
               <div className="Cart_Product_Image_Section">
@@ -122,6 +132,7 @@ function CartItem(props) {
                   src={"http://localhost:5000/" + Product.product.image}
                   alt="No Preveiw"
                 />
+               
               </div>
               <div className="product_Quantity_Information_Section">
                 {Product.quantity}
@@ -146,7 +157,7 @@ function CartItem(props) {
                   className="Cart_Btn_Section"
                   onClick={() => DeletFromCart(Product.product._id)}
                 >
-                  Delete
+                  Borrar
                 </button>
               </div>
             </div>

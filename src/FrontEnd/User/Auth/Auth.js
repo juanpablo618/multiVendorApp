@@ -10,6 +10,8 @@ import OptimizeHook from "../../Shares/Hooks/OptimizeHook";
 import { useHistory } from "react-router-dom";
 import "./Auth.css";
 import "../../Shares/Button/Button.css";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_EMAIL,
@@ -152,28 +154,28 @@ function Auth() {
           id="Login_Signup_H1"
           style={{ textAlign: "center", margin: "0.5rem" }}
         >
-          {isInLogInMode ? "LogIn" : "SignUp"} Required
+          {isInLogInMode ? "Iniciar Sesión" : "Regístrarse"} :)
         </h1>
         <form onSubmit={SignupOrLogin}>
           {!isInLogInMode && (
             <>
               <Input
                 element="input"
-                title="First Name"
+                title="Nombre"
                 type="text"
                 id="firstName"
-                errorMsg="provide First Name please"
-                placeholder="Enter Your First Name"
+                errorMsg="Ingrese un nombre"
+                placeholder="Ingrese su nombre"
                 validators={[VALIDATOR_REQUIRE()]}
                 onInput={inputHandler}
               />
               <Input
                 element="input"
-                title="Last Name"
+                title="Apellido"
                 type="text"
                 id="lastName"
-                errorMsg="provide Last Name please"
-                placeholder="Enter Your Last Name"
+                errorMsg="Ingrese un apellido"
+                placeholder="Ingrese su apellido"
                 validators={[VALIDATOR_REQUIRE()]}
                 onInput={inputHandler}
               />
@@ -206,7 +208,7 @@ function Auth() {
             title="Email"
             type="email"
             id="email"
-            errorMsg="provide email please"
+            errorMsg="ingrese un email por favor"
             placeholder="Enter Your Email"
             validators={[VALIDATOR_EMAIL()]}
             onInput={inputHandler}
@@ -216,19 +218,22 @@ function Auth() {
             title="Password"
             id="password"
             type="password"
-            errorMsg="must have atleast(5) characters"
+            errorMsg="debe contener al menos 5 caracteres"
             placeholder="Enter Your Password"
             validators={[VALIDATOR_MINLENGTH(5)]}
             onInput={inputHandler}
           />
+
           <div id="Btn_Section">
-            <button type="submit" disabled={!state.isValid}>
-              {isInLogInMode ? "LogIn" : "SignUp"}
+            
+            <button type="submit" disabled={!state.isValid} class="btn btn-outline-primary btn-rounded waves-effect">
+              {isInLogInMode ? "Ingresar" : "Registrarse"}
+            </button>
+            
+            <button type="button" onClick={switchMode} class="btn btn-outline-primary btn-rounded waves-effect">
+              Cambiar a formulario para {isInLogInMode ? "Registrarse" : "Ingresar"}
             </button>
 
-            <button type="button" onClick={switchMode}>
-              Switch To {isInLogInMode ? "SignUp" : "LogIn"}
-            </button>
           </div>
         </form>
       </Card>

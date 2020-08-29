@@ -4,6 +4,7 @@ import OptimizeHook from "../../Shares/Hooks/OptimizeHook";
 import { AppContext } from "../../Shares/Context/AppContext";
 import { Link } from "react-router-dom";
 import "./ProductItem.css";
+import { MDBBtn } from "mdbreact";
 
 function ProductItem(props) {
   const Auth = useContext(AppContext);
@@ -76,9 +77,10 @@ function ProductItem(props) {
               <p>RS.{Product.price}$</p>
             </div>
             <div className="Product_Button_Section">
-              <button onClick={() => BuyItem(Product._id)}>Buy Now</button>
+              <button onClick={() => BuyItem(Product._id)}>Comprar</button>
+
               <Link to={`/view/${Product._id}`} className="Btns">
-                View
+                Ver
               </Link>
             </div>
           </div>

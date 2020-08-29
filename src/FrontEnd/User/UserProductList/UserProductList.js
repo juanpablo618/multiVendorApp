@@ -47,13 +47,13 @@ function UserProductList(props) {
     );
   } else if (Products.length === 0) {
     return (
-      <h1 style={{ color: "white", textAlign: "center" }}>Nothing Found :(</h1>
+      <h1 style={{ color: "white", textAlign: "center" }}>No encontramos nada :(</h1>
     );
   } else if (Products) {
     return (
       <div id="My_Products">
         <h1 style={{ textAlign: "center", margin: "1rem auto" }}>
-          My Products
+          Mis Productos
         </h1>
         {Products.map(Product => (
           <div key={Product._id} className="Individual_Products">

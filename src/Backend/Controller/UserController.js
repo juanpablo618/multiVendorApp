@@ -238,6 +238,62 @@ exports.Pay = AsyncWrapper(async (req, res, next) => {
   });
 });
 
+exports.PayJuan = AsyncWrapper(async (req, res, next) => {
+  const Data = [];
+  const NewArr = [];
+  for (let i = 0; i < req.User.items.length; i++) {
+    for (let j = 0; j < req.User.items[i].quantity; j++) {
+      const AddToCart = {
+        product: req.User.items[i].product,
+        buyer: req.User._id,
+        vendor: req.User.items[i].vendor
+      };
+      NewArr.push(AddToCart);
+    }
+  }
+  const SaveToCart = NewArr.map(async Item => {
+    const AddToCart = new AddToCartModel(Item);
+    return await AddToCart.save();
+  });
+  // Storing To AddToCart
+  await Promise.all(SaveToCart);
+  // Removing Redundency And Optimizing Query By Accumalating Data Related To Single Vendor
+  //Into Single Object
+  req.User.items.forEach(Item => {
+    const ItemFound = Data.find(
+      Vendor => Item.vendor.toString() === Vendor.vendor.toString()
+    );
+    if (!ItemFound) {
+      const Obj = {
+        vendor: Item.vendor,
+        totalAmount: Item.total
+      };
+      Data.push(Obj);
+    } else {
+      ItemFound.totalAmount = ItemFound.totalAmount + Item.total;
+    }
+  });
+
+  // Executing Query And It Will Return Pending Promises
+  const promise = Data.map(async Item => {
+    const Vendor = await UserModel.findById(Item.vendor);
+    Vendor.totalAmount = Vendor.totalAmount + Item.totalAmount;
+    return await Vendor.save();
+  });
+
+  // Executing All The Pending Promises-
+  await Promise.all(promise);
+  // Once Bill Paid  Then We Have To Empty The Items
+  req.User.items = [];
+  req.User.totalAmount = 0;
+  await req.User.save();
+  res.status(200).json({
+    Status: "Success",
+    Count: Data.length,
+    Data
+  });
+});
+
 exports.MySell = AsyncWrapper(async (req, res, next) => {
   let Cart = await AddToCartModel.find({ vendor: req.User._id }).populate(
     "product"

@@ -62,7 +62,7 @@ function UploadImage(props) {
         )}
       </div>
       <button id="Upload_Btn" type="button" onClick={OpenDialog}>
-        Upload Image
+        Subir Imagen
       </button>
     </div>
   );

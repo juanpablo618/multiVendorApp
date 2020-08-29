@@ -6,7 +6,7 @@
 #Categories_Heading {
   font-size: 3rem;
   margin: 0.3rem 0rem;
-  color: white;
+  color: #007BFF;
   text-align: center;
 }
 .Indeivdual_Category_Heading {
@@ -28,7 +28,7 @@
   margin: 0px 0.5rem;
 }
 .Btns {
-  background: #ff1c4a;
+  background: #007bff;
   color: #fff;
   text-decoration: none;
 }

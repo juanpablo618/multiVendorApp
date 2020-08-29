@@ -6,7 +6,7 @@ const AsyncWrapper = require("../Utils/AsyncWrapper");
 const AppError = require("../Utils/AppError");
 
 exports.AddProduct = AsyncWrapper(async (req, res, next) => {
-  const { name, description, price, category } = req.body;
+  const { name, telefono, description, price, category } = req.body;
   const vendor = req.User._id;
   const IsCategory = await CategoryModel.findById(category);
   if (!IsCategory) {
@@ -14,6 +14,7 @@ exports.AddProduct = AsyncWrapper(async (req, res, next) => {
   }
   const Product = new ProductModel({
     name,
+    telefono,
     description,
     price,
     image: req.file.path,
@@ -65,8 +66,9 @@ exports.UpdateProduct = AsyncWrapper(async (req, res, next) => {
   if (Product.vendor.toString() !== req.User._id.toString()) {
     return next(new AppError("You Are Not Allowed For This Action", 401));
   }
-  const { name, description, price } = req.body;
+  const { name, telefono, description, price } = req.body;
   Product.name = name;
+  Product.telefono = telefono;
   Product.description = description;
   Product.price = price;
   // Checking If We Have Somethig In File System-

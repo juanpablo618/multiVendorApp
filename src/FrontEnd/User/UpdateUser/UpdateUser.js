@@ -153,17 +153,17 @@ function UpdateUser() {
             />
             <div className="Update_Btn__Section">
               <Link to="/email" className="Btns Update_User_Btn">
-                Change Email
+                Cambiar mi Email
               </Link>
               <button
                 type="submit"
                 disabled={!state.isValid}
                 className="Update_User_Btn"
               >
-                Update
+                Actualizar
               </button>
               <Link to="/password" className="Btns Update_User_Btn">
-                Change Password
+                Cambiar mi Password
               </Link>
             </div>
             <div id="Delete_Account">
@@ -172,7 +172,7 @@ function UpdateUser() {
                 className="Btns Update_User_Btn Delete_Account_Button"
                 onClick={DeleteMe}
               >
-                Delete My Account
+                Borrar mi cuenta
               </Link>
             </div>
           </Card>
